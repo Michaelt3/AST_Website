@@ -72,16 +72,7 @@
               </div>
             </form>
           </div>
-          <script>
-            document.getElementById('nav-button').addEventListener('click', 
-            function() {
-              document.querySelector('.contact-modal').style.display = 'flex';
-            });
-            document.querySelector('.close').addEventListener('click',
-            function() {
-            document.querySelector('.contact-modal').style.display = 'none';
-            });
-          </script>
+          <script src="/static/contact.js"></script>
           <script>
             const api_url = 'https://astapi.herokuapp.com/stages'
             async function getjobdata() {
