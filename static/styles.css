@@ -1,0 +1,324 @@
+/* Master Styles */
+body {
+  font-family: "Lato", sans-serif;
+  margin: 0px;
+}
+
+.Container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/*Nav Styles*/
+
+
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  
+}
+
+.middle-side {
+  display: flex;
+}
+
+.nav-wrapper > .middle-side > div {
+  margin-right: 20px;
+  font-size: 0.9em;
+  text-transform: uppercase;
+}
+
+.nav-link-wrapper {
+  height: 22px;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+  color: #8a8a8a;
+  text-decoration: none;
+  transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+  border-bottom: 1px solid black;
+}
+
+.nav-link-wrapper a:hover{
+  color: black;
+}
+
+.active-nav-link {
+  border-bottom: 1px solid black;
+}
+
+.active-nav-link a {
+  color: black !important;
+}
+
+.nav-contact {
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+  color: #8a8a8a;
+  transition: color 0.5s;
+}
+
+.nav-contact:hover {
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+.left-side {
+  text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.5s;
+  color: #8a8a8a;
+  transition: color 0.5s;
+  margin-left: 25px;
+}
+
+.left-side:hover {
+  border-bottom: 1px solid black;
+  color: black;
+}
+
+/*Portfolio Styles*/
+
+.portfolio-items-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.portfolio-item-wrapper {
+  position: relative;
+  
+}
+
+.portfolio-img-background {
+  height:350px;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.img-text-wrapper {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.logo-wrapper img {
+  width: 50%;
+  margin-bottom: 20px;
+}
+
+.img-text-wrapper .subtitle {
+  transition: 1s;
+  font-weight: 800;
+  color: transparent;
+}
+
+.portfolio-item-wrapper:hover .subtitle {
+  font-weight: 800;
+  color: Cyan;
+}
+
+.img-darken {
+  transition: 1s;
+  filter:brightness(10%);
+}
+
+/*Sliding Background Image*/
+
+
+
+
+/*Header Styles*/
+.fleet-headers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+}
+
+.map-header {
+  text-align: center;
+}
+
+.fleet1-header {
+  text-align: center;
+}
+
+.fleet2-header {
+  text-align: center;
+}
+
+/*Graph Styles*/
+
+.fleet1-graphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.fleet2-graphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.fleets-graphs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+
+/*Contact Modal*/
+
+.contact-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0 , 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.modal-content {
+  width: 800px;
+  height: 500px;
+  background-image: url("/static/Frac Location.jpg");
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 10px;
+  position: relative;
+}
+
+input {
+  width: 30%;
+  display: block;
+  margin: 15px auto;
+}
+
+.close  {
+  color: black;
+  font-size: 42px;
+  position: absolute;
+  top: 0;
+  right: 14px;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+
+/*Operations Side Bar*/
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+.sidebar{
+  position: fixed;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #042331;
+  transition: all .5s ease;
+}
+
+.sidebar header{
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  line-height: 70px;
+  background: #063146;
+  user-select: none;
+}
+
+.sidebar ul a{
+  display: block;
+  height: 100%;
+  width: 100%;
+  line-height: 65px;
+  font-size: 20px;
+  color: white;
+  padding-left: 40px;
+  box-sizing: border-box;
+  border-top: 1px solid rgba(255,255,255,.1);
+  border-bottom: 1px solid black;
+  transition: 0.4s;
+}
+
+ul li:hover a{
+  padding-left: 50px;
+}
+
+.sidebar ul a i{
+  margin-right: 16px;
+}
+
+#check{
+  display: none;
+}
+
+label #btn,label #cancel{
+  position: absolute;
+  cursor: pointer;
+  background: #042331;
+  border-radius: 3px;
+}
+
+label #btn{
+  left: 40px;
+  top: 25px;
+  font-size: 35px;
+  color: white;
+  padding: 6px 12px;
+  transition: all .5s;
+}
+label #cancel{
+  z-index: 1111;
+  left: -195px;
+  top: 3px;
+  font-size: 15px;
+  color: white;
+  padding: 4px 9px;
+  transition: all .5s ease;
+}
+#check:checked ~ .sidebar{
+  left: 0;
+}
+#check:checked ~ label #btn{
+  left: 250px;
+  opacity: 0;
+  pointer-events: none;
+}
+#check:checked ~ label #cancel{
+  left: 218px;
+}
+
+#check:checked ~ section{
+  margin-left: 250px;
+}
+
+section{
+  background: url("/static/Frac Location.jpg") no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  transition: all .5s;
+}

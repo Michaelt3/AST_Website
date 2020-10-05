@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>AST Frac</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  </head>
+  <body>
+      <div class="Sample">
+      Sand Total: <span id="F1sandtot"></span>
+      </div>
+      <div class="Container">
+        <input type="checkbox" id="check">
+        <label for="check">
+        <i class="fas fa-bars" id="btn"></i>
+        <i class="fas fa-times" id="cancel"></i>
+        </label>
+        <div class="nav-wrapper">
+          <div class="left-side">
+          </div>
+          <div class="middle-side">
+            <div class="nav-link-wrapper">
+              <a href="index.html">Home</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Job Status.html">Job Status</a>
+            </div>
+            <div class="nav-link-wrapper active-nav-link">
+              <a href="Operations.html">Operations</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Engineering.html">Engineering</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Electronics.html">Electronics</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Maintenance.html">Maintenance</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Accounting.html">Accounting</a>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="nav-contact" id="nav-button">
+              Contact Us
+            </div>
+          </div>
+        </div>
+        <section></section>
+        <div class="sidebar">
+          <header>Operations Overview</header>
+          <ul>
+            <li><a href="#"><i class="fas fa-stream"></i>Active List</a></li>
+            <li><a href="#"><i class="fas fa-wrench"></i>Overdue Parts</a></li>
+            <li><a href="#"><i class="fas fa-sliders-h"></i>Inventory</a></li>
+            <li><a href="#"><i class="fas fa-user-alt"></i>Personnel</a></li>
+          </ul>
+        </div>
+        <div class="contact-modal">
+          <div class="modal-content">
+            <div class="close">+</div>
+            <img src="/static/AST Logo Clear.png" alt="AST Logo"/>
+            <form action="">
+              <input type="text" placeholder="Name">
+              <input type="text" placeholder="E-mail">
+              <input type="text" placeholder="Concern/Issue">
+              <div class="submit-button">
+                <Button><a href="">Submit</a></Button>
+              </div>
+            </form>
+          </div>
+          <script>
+            document.getElementById('nav-button').addEventListener('click', 
+            function() {
+              document.querySelector('.contact-modal').style.display = 'flex';
+            });
+            document.querySelector('.close').addEventListener('click',
+            function() {
+            document.querySelector('.contact-modal').style.display = 'none';
+            });
+          </script>
+          <script>
+            const api_url = 'https://astapi.herokuapp.com/stages'
+            async function getjobdata() {
+              const response = await fetch(api_url);
+              const data = await response.json();
+              console.log(data)
+
+              document.getElementById('F1sandtot').textContent = data.fleet1_stage.sand_total;
+            }
+            getjobdata();
+          </script>
+        </div>
+      </div>
+  </body>
+</html>

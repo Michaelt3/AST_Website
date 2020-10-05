@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>AST Frac</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="/static/styles.css">
+  </head>
+  <body>
+      <div class="Container">
+        <div class="nav-wrapper">
+          <div class="left-side">
+            Sign In
+          </div>
+          <div class="middle-side">
+            <div class="nav-link-wrapper active-nav-link">
+              <a href="index.html">Home</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Job Status.html">Job Status</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Operations.html">Operations</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Engineering.html">Engineering</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Electronics.html">Electronics</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Maintenance.html">Maintenance</a>
+            </div>
+            <div class="nav-link-wrapper">
+              <a href="Accounting.html">Accounting</a>
+            </div>
+          </div>
+          <div class="right-side">
+            <div class="nav-contact" id="nav-button">
+              Contact Us
+            </div>
+
+          </div>
+        </div>
+        <div class="content-wrapper">
+
+          <div class="portfolio-items-wrapper">
+            <div class="portfolio-item-wrapper">
+              <div class="portfolio-img-background" style="background-image:url(/static/Progress.jpg)"></div>
+
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <a href="/Job Status.html">
+                  <img src="/static/Progress Logo.png" alt="Progress Logo">
+                  </a>
+                </div>
+                <div class="subtitle">
+                  Job Status
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item-wrapper">
+              <div class="portfolio-img-background" style="background-image:url(/static/Operations2.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <a href="Operations.html">
+                  <img src="/static/Operations Logo.png" alt="Operations Logo">
+                  </a>
+                </div>
+                <div class="subtitle">
+                  Operations
+                </div>
+              </div>
+
+            </div>
+            <div class="portfolio-item-wrapper">
+              <div class="portfolio-img-background" style="background-image:url(/static/Engineering.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <a href="Engineering.html">
+                  <img src="/static/Engineering Logo.png" alt="Engineering Logo">
+                  </a>
+                </div>
+                <div class="subtitle">
+                  Engineering
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item-wrapper">
+              <div class="portfolio-img-background" style="background-image:url(/static/Electronics.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <a href="Electronics.html">
+                  <img src="/static/Electronics Logo.png" alt="Electronics Logo">
+                  </a>
+                </div>
+                <div class="subtitle">
+                  Electronics
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item-wrapper">
+              <div class="portfolio-img-background" style="background-image:url(/static/Maintenance.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <a href="Maintenance.html">
+                  <img src="/static/Maintenance Logo.png" alt="Maintenance Logo">
+                  </a>
+                </div>
+                <div class="subtitle">
+                  Maintenance
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio-item-wrapper">
+              <div class="portfolio-img-background" style="background-image:url(/static/Accounting.jpg)"></div>
+              <div class="img-text-wrapper">
+                <div class="logo-wrapper">
+                  <a href="Accounting.html">
+                  <img src="/static/Accounting Logo.png" alt="Accounting Logo">
+                  </a>
+                </div>
+                <div class="subtitle">
+                  Accounting
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+        <div class="contact-modal">
+          <div class="modal-content">
+            <div class="close">+</div>
+            <img src="/static/AST Logo Clear.png" alt="AST Logo"/>
+            <form action="">
+              <input type="text" placeholder="Name">
+              <input type="text" placeholder="E-mail">
+              <input type="text" placeholder="Concern/Issue">
+              <div class="submit-button">
+                <Button><a href="">Submit</a></Button>
+              </div>
+            </form>
+          </div>
+          <script>
+            document.getElementById('nav-button').addEventListener('click', 
+            function() {
+              document.querySelector('.contact-modal').style.display = 'flex';
+            });
+            document.querySelector('.close').addEventListener('click',
+            function() {
+            document.querySelector('.contact-modal').style.display = 'none';
+            });
+          </script>
+
+        </div>
+      </div>
+  </body>
+  <script type="text/javascript">
+    const portfolioItems = document.querySelectorAll('.portfolio-item-wrapper')
+
+    portfolioItems.forEach(portfolioItem => {
+      portfolioItem.addEventListener('mouseover', () => {
+        portfolioItem.childNodes[1].classList.add('img-darken');
+      })
+      portfolioItem.addEventListener('mouseout', () => {
+        portfolioItem.childNodes[1].classList.remove('img-darken');
+      })
+    })
+  </script>
+</html>
